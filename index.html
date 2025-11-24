@@ -15,22 +15,10 @@
         <input type="number" id="amount" value="1">
 
         <label>From</label>
-        <select id="fromCurrency">
-            <option>USD</option>
-            <option>INR</option>
-            <option>EUR</option>
-            <option>GBP</option>
-            <option>AUD</option>
-        </select>
+        <select id="fromCurrency"></select>
 
         <label>To</label>
-        <select id="toCurrency">
-            <option>USD</option>
-            <option>INR</option>
-            <option>EUR</option>
-            <option>GBP</option>
-            <option>AUD</option>
-        </select>
+        <select id="toCurrency"></select>
 
         <button id="convertBtn">Convert</button>
 
@@ -38,7 +26,11 @@
             Result: 0
         </div>
     </div>
-    <script src="codes.js"></script>
+
+    <!-- Currencies list -->
+    <script src="currencyList.js"></script>
+
+    <!-- Conversion logic -->
     <script src="app.js"></script>
 </body>
 </html>
