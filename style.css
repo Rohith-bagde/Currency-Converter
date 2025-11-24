@@ -1,4 +1,3 @@
-/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
@@ -8,7 +7,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-/* Background */
 body {
     height: 100vh;
     display: flex;
@@ -17,7 +15,6 @@ body {
     background: linear-gradient(135deg, #4e54c8, #8f94fb);
 }
 
-/* Glassmorphic Card */
 .container {
     width: 380px;
     padding: 25px;
@@ -28,14 +25,12 @@ body {
     animation: fadeIn 0.8s ease;
 }
 
-/* Title */
 h2 {
     text-align: center;
     color: #fff;
     margin-bottom: 20px;
 }
 
-/* Inputs & Dropdowns */
 label {
     color: #f0f0f0;
     font-size: 14px;
@@ -65,7 +60,6 @@ input::placeholder {
     color: #ddd;
 }
 
-/* Dropdown Row */
 .currency-row {
     display: flex;
     gap: 15px;
@@ -76,7 +70,6 @@ input::placeholder {
     flex: 1;
 }
 
-/* Swap Button */
 .swap-btn {
     padding: 13px;
     background: rgba(255, 255, 255, 0.25);
@@ -95,7 +88,6 @@ input::placeholder {
     background: rgba(255, 255, 255, 0.45);
 }
 
-/* Convert Button */
 button {
     width: 100%;
     padding: 12px;
@@ -115,7 +107,6 @@ button:hover {
     background: #f2f2f2;
 }
 
-/* Result Box */
 .result-box {
     margin-top: 20px;
     padding: 15px;
@@ -128,7 +119,6 @@ button:hover {
     backdrop-filter: blur(10px);
 }
 
-/* Fade Animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
