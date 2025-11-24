@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Currency Converter</h2>
+
+        <label>Amount</label>
+        <input type="number" id="amount" value="1">
+
+        <label>From</label>
+        <select id="fromCurrency">
+            <option>USD</option>
+            <option>INR</option>
+            <option>EUR</option>
+            <option>GBP</option>
+            <option>AUD</option>
+        </select>
+
+        <label>To</label>
+        <select id="toCurrency">
+            <option>USD</option>
+            <option>INR</option>
+            <option>EUR</option>
+            <option>GBP</option>
+            <option>AUD</option>
+        </select>
+
+        <button id="convertBtn">Convert</button>
+
+        <div class="result-box" id="resultBox">
+            Result: 0
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
