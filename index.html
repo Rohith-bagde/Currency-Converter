@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Currency Converter</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <div class="container">
-        <h2>Currency Converter</h2>
+<div class="container">
+    <h2>Currency Converter</h2>
 
-        <label>Amount</label>
-        <input type="number" id="amount" value="1">
+    <label for="amount">Enter Amount</label>
+    <input type="number" id="amount" placeholder="Enter amount" />
 
-        <label>From</label>
-        <select id="fromCurrency"></select>
+    <div class="currency-row">
+        <div class="select-box">
+            <label for="fromCurrency">From</label>
+            <select id="fromCurrency"></select>
+        </div>
 
-        <label>To</label>
-        <select id="toCurrency"></select>
+        <!-- Swap Icon -->
+        <div class="swap-btn" id="swapBtn">
+            <i class="fa-solid fa-right-left"></i>
+        </div>
 
-        <button id="convertBtn">Convert</button>
-
-        <div class="result-box" id="resultBox">
-            Result: 0
+        <div class="select-box">
+            <label for="toCurrency">To</label>
+            <select id="toCurrency"></select>
         </div>
     </div>
 
-    <!-- Currencies list -->
-    <script src="currencyList.js"></script>
+    <button onclick="convertCurrency()">Convert</button>
 
-    <!-- Conversion logic -->
-    <script src="app.js"></script>
+    <div class="result-box" id="result"></div>
+</div>
+
+<script src="codes.js"></script>
+<script src="app.js"></script>
+
 </body>
 </html>

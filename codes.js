@@ -1,4 +1,4 @@
-const countryList = {
+const codes = {
   AED: "AE",
   AFN: "AF",
   XCD: "AG",

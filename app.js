@@ -1,38 +1,49 @@
+// Load dropdowns with currency codes
 const fromCurrency = document.getElementById("fromCurrency");
 const toCurrency = document.getElementById("toCurrency");
-const convertBtn = document.getElementById("convertBtn");
-const resultBox = document.getElementById("resultBox");
-const amountInput = document.getElementById("amount");
+const resultBox = document.getElementById("result");
 
-// Populate dropdowns from currencyList.js
-Object.keys(currencyList).forEach(code => {
-    const option1 = document.createElement("option");
-    const option2 = document.createElement("option");
+// Populate dropdowns
+for (let code in codes) {
+    fromCurrency.innerHTML += `<option value="${code}">${code} - ${codes[code]}</option>`;
+    toCurrency.innerHTML += `<option value="${code}">${code} - ${codes[code]}</option>`;
+}
 
-    option1.value = code;
-    option2.value = code;
-
-    option1.textContent = `${code} - ${currencyList[code]}`;
-    option2.textContent = `${code} - ${currencyList[code]}`;
-
-    fromCurrency.appendChild(option1);
-    toCurrency.appendChild(option2);
-});
-
-// Set default
+// Default values
 fromCurrency.value = "USD";
 toCurrency.value = "INR";
 
-// Convert
-convertBtn.addEventListener("click", () => {
-    const amount = amountInput.value;
-
-    fetch(`https://api.exchangerate-api.com/v4/latest/${fromCurrency.value}`)
-        .then(res => res.json())
-        .then(data => {
-            const rate = data.rates[toCurrency.value];
-            const result = (amount * rate).toFixed(2);
-
-            resultBox.textContent = `Result: ${result} ${toCurrency.value}`;
-        });
+// Swap Button Logic
+document.getElementById("swapBtn").addEventListener("click", () => {
+    let temp = fromCurrency.value;
+    fromCurrency.value = toCurrency.value;
+    toCurrency.value = temp;
 });
+
+// Conversion Function
+async function convertCurrency() {
+    const amount = document.getElementById("amount").value;
+
+    if (!amount || amount <= 0) {
+        resultBox.innerHTML = "Enter a valid amount.";
+        return;
+    }
+
+    const from = fromCurrency.value;
+    const to = toCurrency.value;
+
+    const url = `https://api.exchangerate-api.com/v4/latest/${from}`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        const rate = data.rates[to];
+        const converted = (amount * rate).toFixed(2);
+
+        resultBox.innerHTML = `${amount} ${from} = <br><strong>${converted} ${to}</strong>`;
+
+    } catch (error) {
+        resultBox.innerHTML = "Error fetching exchange rates.";
+    }
+}
