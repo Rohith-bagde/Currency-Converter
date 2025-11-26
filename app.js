@@ -39,6 +39,6 @@ async function convertCurrency() {
         resultBox.innerHTML = `${amount} ${from} = <br><strong>${converted} ${to}</strong>`;
 
     } catch (error) {
-        resultBox.innerHTML = "Error fetching exchange rates.";
+        resultBox.innerHtml = "Error fetching exchange rates.";
     }
 }
